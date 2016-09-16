@@ -1,0 +1,23 @@
+{
+    "name": "ptrml/polynotice",
+    "description": "Universal notifications for Laravel 5+",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Petar Milevski",
+            "email": "ptrmlvsk@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+      "php": ">=5.5.0",
+      "illuminate/database": ">=5.0",
+      "illuminate/support": ">=5.0",
+      "predis/predis": ">=1.1.*"
+    },
+    "autoload": {
+      "psr-4": {
+        "Ptrml\\Polynotice\\":"src/"
+      }
+    }
+}
