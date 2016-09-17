@@ -85,4 +85,9 @@ class DefaultNotice implements NoticeableInterface
     {
         return json_encode(get_object_vars($this));
     }
+
+    public function setEvent($event)
+    {
+        $this->event = $event;
+    }
 }

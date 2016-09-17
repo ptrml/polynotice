@@ -105,10 +105,12 @@ class Polynotice
      * @param bool $subs_to_parents
      * @return mixed
      */
-    public static function listSubscribers($event, $subs_to_parents=true)
+    public static function listSubscribers($event, $include_subs_to_parents=false)
     {
-        if($subs_to_parents)
-            $events = static::getWholeBranch($event);
+
+        //TODO config
+        if($include_subs_to_parents)
+            $events = static::getEventParents($event);
         else
             $events[]=$event;
 
@@ -128,11 +130,27 @@ class Polynotice
 
     /**
      * Pushes message to redis
+     * example: Users subscribed to categories:tools are also subscribed to categories:tools:power_tools and also to categories:tools:power_tools:electric
+     * So if a new categories:tools:power_tools:electric is inserted all of them will be notified
+     *
      * @param NoticeableInterface $notice
      */
     public static function publish(NoticeableInterface $notice)
     {
-        Redis::publish("polynotice",$notice->toJson());
+        //TODO config
+        if(true)
+        {
+            $events = static::getEventParents($notice->getEvent());
+
+            foreach ($events as $event)
+            {
+                $notice->setEvent($event);
+                Redis::publish("polynotice",$notice->toJson());
+            }
+
+        }
+        else
+            Redis::publish("polynotice",$notice->toJson());
     }
 
     /**
@@ -150,7 +168,7 @@ class Polynotice
      * @param $event
      * @return array
      */
-    private static function getWholeBranch($event)
+    public static function getEventParents($event)
     {
         $events = array();
 

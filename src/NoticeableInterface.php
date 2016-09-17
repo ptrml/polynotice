@@ -19,4 +19,6 @@ interface NoticeableInterface
      * @return string
      */
     function toJson();
+
+    public function setEvent($event);
 }
