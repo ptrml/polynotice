@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 
 class DefaultNotice implements NoticeableInterface
 {
-    private $event;
+
     private $user_id;
     private $title;
     private $message;
@@ -22,19 +22,13 @@ class DefaultNotice implements NoticeableInterface
      * DefaultNotice constructor.
      * @param $event
      */
-    public function __construct($event,$title = null,$message = null)
+    public function __construct($title = null,$message = null)
     {
-        $this->event = $event;
         $this->user_id = auth()->id();
         $this->title = $title;
         $this->message = $message;
     }
 
-
-    function getEvent()
-    {
-        return $this->event;
-    }
 
     /**
      * @return mixed
@@ -78,16 +72,11 @@ class DefaultNotice implements NoticeableInterface
 
 
     /**
-     * Form JSON string from your model
+     * Returns a json of the data to be sent
      * @return string
      */
     function toJson()
     {
         return json_encode(get_object_vars($this));
-    }
-
-    public function setEvent($event)
-    {
-        $this->event = $event;
     }
 }

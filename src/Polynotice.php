@@ -105,7 +105,7 @@ class Polynotice
      * @param bool $subs_to_parents
      * @return mixed
      */
-    public static function listSubscribers($event, $include_subs_to_parents=false)
+    public static function listSubscriberIds($event, $include_subs_to_parents=false)
     {
 
         //TODO config
@@ -123,8 +123,21 @@ class Polynotice
 
         $results = array_unique($query->pluck('user_id')->toArray());
 
-        return User::findMany($results);
+        if(in_array(null,$results))
+            return ['*'];
 
+        return $results;
+
+    }
+
+    public static function listSubscribers($event, $include_subs_to_parents=false)
+    {
+        $subids = static::listSubscriberIds($event, $include_subs_to_parents);
+
+        if(in_array('*',$subids))
+            return User::all();
+        else
+            return User::findMany($subids);
     }
 
 
@@ -135,22 +148,17 @@ class Polynotice
      *
      * @param NoticeableInterface $notice
      */
-    public static function publish(NoticeableInterface $notice)
+    public static function publish($event,NoticeableInterface $notice)
     {
         //TODO config
-        if(true)
-        {
-            $events = static::getEventParents($notice->getEvent());
 
-            foreach ($events as $event)
-            {
-                $notice->setEvent($event);
-                Redis::publish("polynotice",$notice->toJson());
-            }
 
-        }
-        else
-            Redis::publish("polynotice",$notice->toJson());
+        $tmp = new \stdClass();
+        $tmp->event = $event;
+        $tmp->recipients = static::listSubscriberIds($event,true);
+        $tmp->data = $notice->toJson();
+
+        Redis::publish("polynotice",json_encode($tmp));
     }
 
     /**
@@ -172,12 +180,12 @@ class Polynotice
     {
         $events = array();
 
-        $tmp_events = explode(':',$event);
+        $tmp_events = explode('::',$event);
 
         $events_size = count($tmp_events)-1;
         while($events_size >= 0  )
         {
-            $events[] = implode(':',$tmp_events);
+            $events[] = implode('::',$tmp_events);
 
             array_pull($tmp_events,$events_size);
 

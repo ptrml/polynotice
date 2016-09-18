@@ -12,13 +12,10 @@ namespace Ptrml\Polynotice;
 interface NoticeableInterface
 {
 
-    function getEvent();
-
     /**
-     * Form JSON string from your model
+     * Returns a json of the data to be sent
      * @return string
      */
     function toJson();
 
-    public function setEvent($event);
 }
