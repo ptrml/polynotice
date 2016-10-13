@@ -16,6 +16,13 @@ interface NoticeableInterface
      * Returns a json of the data to be sent
      * @return string
      */
-    function toJson();
+    function jsonify();
+
+
+    /**
+     * Save to database, empty if notification is temporary
+     * @return null
+     */
+    function save_db($user_id);
 
 }

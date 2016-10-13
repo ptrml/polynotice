@@ -15,6 +15,24 @@ public function boot()
 {
     $this->loadMigrationsFrom(__DIR__.'/Migrations');
 
+    if (! $this->app->routesAreCached())
+    {
+        $this->app['router']->group(['namespace' => 'Ptrml\Polynotice\Controllers','middleware' => ['web']], function () {
+            require __DIR__.'/Routes/polynotice_routes.php';
+        });
+    }
+
+    $this->loadViewsFrom(__DIR__.'/Views', 'polynotice');
+
+    $this->publishes([
+        //__DIR__.'/Views' => resource_path('views/vendor/polynotice'),
+        __DIR__.'/../assets/js/components' => resource_path('assets/js/components'),
+
+    ], 'polynotice');
+
+    $this->publishes([
+        __DIR__ . '/../assets' => public_path('vendor/polynotice'),
+    ], 'public');
 }
 
 /**
@@ -26,4 +44,5 @@ public function register()
 {
 //
 }
+
 }

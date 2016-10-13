@@ -148,17 +148,25 @@ class Polynotice
      *
      * @param NoticeableInterface $notice
      */
-    public static function publish($event,NoticeableInterface $notice)
+    public static function publish($event,NoticeableInterface $notice,$save = false)
     {
         //TODO config
 
 
         $tmp = new \stdClass();
         $tmp->event = $event;
-        $tmp->recipients = static::listSubscriberIds($event,true);
-        $tmp->data = $notice->toJson();
+        $tmp->recipients = [1];//static::listSubscriberIds($event,true);
+        $tmp->data = $notice->jsonify();
 
         Redis::publish("polynotice",json_encode($tmp));
+
+        if($save)
+        {
+            foreach ($tmp->recipients as $rec)
+            {
+                $notice->save_db($rec);
+            }
+        }
     }
 
     /**
@@ -194,5 +202,6 @@ class Polynotice
 
         return $events;
     }
+
 
 }
