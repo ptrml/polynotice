@@ -2,28 +2,16 @@
 Simple realtime notifications for your Laravel app in 5 minutes.
 
 ##Prerequisites
-<ul>
-<li>Laravel 5+</li>
-<li>Redis</li>
-<li>Socket.IO</li>
-<li>Node</li>
-<li>Gulp</li>
-<li>Browserify</li>
-<li>Vue</li>
-<li>Bootstrap</li>
-<li>jQuery</li>
-</ul>
 
-##Installation
-
-### Backbone
-#### Install Redis
+### Redis
 <pre>apt-get install redis</pre>
-#### Install current version of node.js
+### node.js
 <pre>curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install -y nodejs</pre>
-#### Deploy the node socket server
+### Custom node socket server
 <pre>will update when uploaded</pre>
+
+##Installation
 
 ### Backend
 #### Install via composer:
@@ -99,7 +87,8 @@ sudo apt-get install -y nodejs</pre>
 ```
 
 ### Customization
-#### Edit <b>assets/js/polynotice/dropdown.vue*</b> for a custom look and feel. Don't forget to gulp!
+#### Edit <b>assets/js/polynotice/dropdown.vue</b> for a custom look and feel. 
+Don't forget to gulp!
 
 <br>
 ###Enjoy
