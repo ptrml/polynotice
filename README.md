@@ -56,7 +56,7 @@ sudo apt-get install -y nodejs</pre>
   <pre>gulp</pre>
 
 ## Usage
-#### Import component
+#### Import component in your .js file
 <pre>import polynotice_dropdown from './components/dropdown.vue';</pre>
 #### Make sure to add the folowing code to the ready function of your main Vue block
 <pre>ready: function(){
@@ -89,3 +89,22 @@ sudo apt-get install -y nodejs</pre>
             });
         }
     }</pre>
+
+#### Use the dropdown template in your bootstrap navbar
+```html
+<ul class="nav navbar-nav navbar-right">
+    ...
+    <polynotice_dropdown></polynotice_dropdown>
+</ul>
+```
+
+### Customization
+#### Edit <b>assets/polynotice/dropdown.vue*</b> for a custom look and feel. Don't forget to gulp!
+
+<br>
+###Enjoy
+
+<br><br><br><br>
+## License
+
+[MIT license](http://opensource.org/licenses/MIT).
