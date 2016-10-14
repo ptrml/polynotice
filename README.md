@@ -38,8 +38,7 @@ sudo apt-get install -y nodejs</pre>
 
 ### Frontend
 #### Make sure your projects <b>packages.json</b> file contains these dependencies or install jquery, bootstrap, vue and socket.io manually
-<pre>
-    "bootstrap-sass": "^3.3.7",
+<pre>"bootstrap-sass": "^3.3.7",
     "gulp": "^3.9.1",
     "jquery": "^3.1.0",
     "laravel-elixir": "^6.0.0-11",
@@ -49,8 +48,9 @@ sudo apt-get install -y nodejs</pre>
     "lodash": "^4.14.0",
     "vue": "^1.0.26",
     "babel-preset-es2015": "^6.16.0",
-    "babel-preset-react": "^6.16.0"
-  </pre>
-  #### Install packages
+    "babel-preset-react": "^6.16.0"</pre>
+    
+    
+#### Install packages
   <pre>npm install</pre>
   <pre>gulp</pre>
