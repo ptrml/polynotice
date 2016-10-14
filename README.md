@@ -28,14 +28,15 @@ sudo apt-get install -y nodejs</pre>
 ### Backend
 #### Install via composer:
 <pre>composer require ptrml/polynotice "dev-master"</pre>
-#### Register the service provider in <b>conf/app.php</b>:
-<pre>
+
+#### Register the service provider in <b>conf/app.php</b>
+
 'providers' => [
 ...
 Ptrml\Polynotice\PolynoticeServiceProvider::class,
 ...
 ],
-</pre>
+
 #### Publish stuff and migrate:
 <pre>php artisan vendor:publish --tag=polynotice</pre>
 <pre>php artisan migrate</pre>
