@@ -14,7 +14,7 @@ Simple realtime notifications for your Laravel app in less then 5 minutes.
 <li>jQuery</li>
 </ul>
 
-##Step by step installation instructions coming soon!
+##Installation
 
 ### Backbone
 #### Install Redis
@@ -54,3 +54,38 @@ sudo apt-get install -y nodejs</pre>
 #### Install packages
   <pre>npm install</pre>
   <pre>gulp</pre>
+
+## Usage
+#### Import component
+<pre>import polynotice_dropdown from './components/dropdown.vue';</pre>
+#### Make sure to add the folowing code to the ready function of your main Vue block
+<pre>ready: function(){
+
+        $.getJSON( "/polynotice/cfg", function( cfgdata ) {
+            var polynotice_channel = "polynotice";
+            var polynotice_socket = io(cfgdata.node_url, {secure: true, query: 'jwt=' + cfgdata.jwt});
+            polynotice_socket.on(polynotice_channel,function(socdata){
+                socdata.data = JSON.parse(socdata.data);
+                if(socdata.type === 1)
+                {
+                    this.$broadcast('polynotice_newnotice',socdata.data);
+                }
+            }.bind(this));
+        }.bind(this));
+    },</pre>
+#### Make sure to register the folowing event to your main Vue block
+<pre>events: {
+        'polynotice_seenotice' : function(notice){
+            $.ajax({
+                url: '/polynotice/see',
+                type: 'post',
+                data: {
+                    id: notice.data.id
+                },
+                headers: {
+                    'X-CSRF-Token': window.Laravel.csrfToken
+                },
+                dataType: 'json'
+            });
+        }
+    }</pre>
