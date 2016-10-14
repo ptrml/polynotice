@@ -63,17 +63,8 @@
                 if(notice.data.id)
                 {
                     //polynotice_socket.emit(polynotice_returnchannel,{type : 2,data : notice.data.id});
-                    $.ajax({
-                        url: '/polynotice/see',
-                        type: 'post',
-                        data: {
-                            id: notice.data.id
-                        },
-                        headers: {
-                            'X-CSRF-Token': window.Laravel.csrfToken
-                        },
-                        dataType: 'json'
-                    });
+                    this.$dispatch('polynotice_seenotice',{notice:notice});
+
                 }
                 return false;
             },

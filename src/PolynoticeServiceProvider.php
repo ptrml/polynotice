@@ -27,9 +27,6 @@ public function boot()
 
     ], 'polynotice');
 
-    $this->publishes([
-        __DIR__ . '/../assets' => public_path('vendor/polynotice'),
-    ], 'public');
 }
 
 /**
