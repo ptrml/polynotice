@@ -99,7 +99,7 @@ sudo apt-get install -y nodejs</pre>
 ```
 
 ### Customization
-#### Edit <b>assets/polynotice/dropdown.vue*</b> for a custom look and feel. Don't forget to gulp!
+#### Edit <b>assets/js/polynotice/dropdown.vue*</b> for a custom look and feel. Don't forget to gulp!
 
 <br>
 ###Enjoy
