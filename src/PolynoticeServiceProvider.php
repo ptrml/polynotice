@@ -22,11 +22,8 @@ public function boot()
         });
     }
 
-    $this->loadViewsFrom(__DIR__.'/Views', 'polynotice');
-
     $this->publishes([
-        //__DIR__.'/Views' => resource_path('views/vendor/polynotice'),
-        __DIR__.'/../assets/js/components' => resource_path('assets/js/components'),
+        __DIR__.'/../assets/js/components' => resource_path('assets/js/components/polynotice'),
 
     ], 'polynotice');
 
