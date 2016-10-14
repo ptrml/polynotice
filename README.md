@@ -1,5 +1,5 @@
 # Polynotice
-Simple realtime notifications for your Laravel app in less then 5 minutes.
+Simple realtime notifications for your Laravel app in 5 minutes.
 
 ##Prerequisites
 <ul>
