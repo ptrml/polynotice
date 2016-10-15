@@ -1,6 +1,6 @@
 # Polynotice
 Simple realtime notifications for your Laravel app in 5 minutes.
-
+<br><br><br>
 ##Prerequisites
 
 ### Redis
