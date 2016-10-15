@@ -13,7 +13,7 @@ or use nvm
 <pre>will update when uploaded</pre>
 
 ##Installation
-
+<br><br>
 ### Backend
 #### Install via composer:
 <pre>composer require ptrml/polynotice "dev-master"</pre>
@@ -43,7 +43,7 @@ or use nvm
 #### Install packages
   <pre>npm install</pre>
   <pre>gulp</pre>
-
+<br><br><br>
 ## Usage
 #### Import component in your .js file
 <pre>import Polynotice from './polynotice/Polynotice.js';
@@ -65,9 +65,9 @@ import polynotice_dropdown from './polynotice/components/dropdown.vue';</pre>
     <polynotice_dropdown></polynotice_dropdown>
 </ul>
 ```
-
-### Customization
-#### Edit <b>assets/js/polynotice/components/dropdown.vue</b> for a custom look and feel. 
+<br><br><br>
+## Customization
+Edit <b>assets/js/polynotice/components/dropdown.vue</b> for a custom look and feel. 
 Don't forget to gulp!
 
 <br>
