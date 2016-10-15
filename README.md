@@ -44,9 +44,11 @@ or use nvm
   <pre>gulp</pre>
 <br><br><br>
 ## Usage
-#### Import component in your .js file
+#### Import and instantiate
 <pre>import Polynotice from './polynotice/Polynotice.js';
-import polynotice_dropdown from './polynotice/components/dropdown.vue';</pre>
+import polynotice_dropdown from './polynotice/components/dropdown.vue';
+
+let polynotice = new Polynotice();</pre>
 #### Make sure to append your the ready function and add the following event to your parent Vue block.
 <pre>ready: function(){
         ...
