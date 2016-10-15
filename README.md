@@ -7,7 +7,7 @@ Simple realtime notifications for your Laravel app in 5 minutes.
 <pre>apt-get install redis</pre>
 ### node.js
 <pre>curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-sudo apt-get install -y nodejs</pre>
+sudo apt-get install -y nodejs</pre> (or use nvm)
 ### Custom node socket server
 <pre>will update when uploaded</pre>
 
