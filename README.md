@@ -68,7 +68,7 @@ let polynotice = new Polynotice();</pre>
 ```
 <br><br><br>
 ## Customization
-Edit <b>assets/js/polynotice/components/dropdown.vue</b> for a custom look and feel. 
+Edit Vue components in <b>assets/js/polynotice/components</b> for a custom look and feel. 
 Don't forget to gulp!
 
 <br>
