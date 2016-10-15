@@ -67,7 +67,7 @@ import polynotice_dropdown from './polynotice/components/dropdown.vue';</pre>
 ```
 
 ### Customization
-#### Edit <b>assets/js/polynotice/dropdown.vue</b> for a custom look and feel. 
+#### Edit <b>assets/js/polynotice/components/dropdown.vue</b> for a custom look and feel. 
 Don't forget to gulp!
 
 <br>
