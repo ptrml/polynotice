@@ -23,7 +23,7 @@ public function boot()
     }
 
     $this->publishes([
-        __DIR__.'/../assets/js/components' => resource_path('assets/js/components/polynotice'),
+        __DIR__.'/../assets/js/' => resource_path('assets/js/polynotice'),
 
     ], 'polynotice');
 
