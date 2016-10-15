@@ -46,37 +46,16 @@ or use nvm
 
 ## Usage
 #### Import component in your .js file
-<pre>import polynotice_dropdown from './components/dropdown.vue';</pre>
-#### Make sure to add the folowing code to the ready function of your main Vue block
+<pre>import Polynotice from './polynotice/Polynotice.js';
+import polynotice_dropdown from './polynotice/components/dropdown.vue';</pre>
+#### Make sure to append your the ready function and add the following event to your parent Vue block.
 <pre>ready: function(){
-
-        $.getJSON( "/polynotice/cfg", function( cfgdata ) {
-            var polynotice_channel = "polynotice";
-            var polynotice_socket = io(cfgdata.node_url, {secure: true, query: 'jwt=' + cfgdata.jwt});
-            polynotice_socket.on(polynotice_channel,function(socdata){
-                socdata.data = JSON.parse(socdata.data);
-                if(socdata.type === 1)
-                {
-                    this.$broadcast('polynotice_newnotice',socdata.data);
-                }
-            }.bind(this));
-        }.bind(this));
-    },</pre>
-#### Make sure to register the folowing event to your main Vue block
-<pre>events: {
-        'polynotice_seenotice' : function(notice){
-            $.ajax({
-                url: '/polynotice/see',
-                type: 'post',
-                data: {
-                    id: notice.data.id
-                },
-                headers: {
-                    'X-CSRF-Token': window.Laravel.csrfToken
-                },
-                dataType: 'json'
-            });
-        }
+        ...
+        polynotice.cfg(this);
+    },
+    events: {
+        ...
+        'polynotice_seenotice' : polynotice.seeNotice,
     }</pre>
 
 #### Use the dropdown template in your bootstrap navbar
