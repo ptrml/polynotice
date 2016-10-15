@@ -13,7 +13,6 @@ or use nvm
 <pre>will update when uploaded</pre>
 
 ##Installation
-<br><br>
 ### Backend
 #### Install via composer:
 <pre>composer require ptrml/polynotice "dev-master"</pre>
