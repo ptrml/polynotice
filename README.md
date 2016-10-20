@@ -77,7 +77,7 @@ let polynotice = new Polynotice();</pre>
 <pre>Polynotice::publish("fire_notice",$defaultNotice);</pre>
 
 #### You can also receive notifications from multiple channels by subscribing to their parent.
-The "::" enables you to subscribe to construct a channel name tree.
+The "::" marking enables you to construct a channel name tree, where the double colon marks a node.
 
 
 Example:
