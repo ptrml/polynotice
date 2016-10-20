@@ -77,7 +77,9 @@ let polynotice = new Polynotice();</pre>
 <pre>Polynotice::publish("notice::products::pants",$defaultNotice);</pre>
 
 Notice the "::" marking in the channel name. It enables you to subscribe not only to a specific channel, but to multiple subchannels.
+<br>
 Example:
+
 By subscribing to <b>notice::products::pants</b> you will receive notifications published on <b>notice::products::pants</b>, but you will also receive notifications published on <b>notice::products::pants::cotton_pants</b> and <b>notice::products::pants::nylon_pants</b> .
 
 <br><br><br>
