@@ -1,7 +1,7 @@
 # Polynotice
 Simple realtime notifications for your Laravel app in 5 minutes. 
 
-API secured with JWT...
+Description, description, API secured with JWT...
 <br><br><br>
 ##Prerequisites
 
