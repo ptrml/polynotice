@@ -90,6 +90,11 @@ You are free to construct your own channel nomenclature.
 Edit Vue components in <b>assets/js/polynotice/components</b> for a custom look and feel. 
 Don't forget to gulp!
 
+####You can also create your own VUE components in the same folder.
+Instructions pending
+
+
+
 <br>
 ###Enjoy
 
