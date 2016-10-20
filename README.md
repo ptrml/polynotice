@@ -72,11 +72,12 @@ let polynotice = new Polynotice();</pre>
 <br><br><br>
 ##Usage
 ####Subscribe to a notification channel:
-<pre>Polynotice::subscribeTo("notice::products::pants");</pre>
+<pre>Polynotice::subscribeTo("fire_notice");</pre>
 ####Publish on a notification channel:
-<pre>Polynotice::publish("notice::products::pants",$defaultNotice);</pre>
+<pre>Polynotice::publish("fire_notice",$defaultNotice);</pre>
 
-Notice the "::" marking in the channel name. It enables you to subscribe not only to a specific channel, but to multiple subchannels.
+#### You can also receive notifications from multiple channels by subscribing to their parent.
+The "::" enables you to subscribe to construct a channel name tree.
 
 
 Example:
