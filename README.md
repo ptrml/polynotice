@@ -82,7 +82,7 @@ The "::" marking enables you to construct a channel name tree, where the double 
 
 Example:
 
-By subscribing to <b>notice::products::pants</b> you will receive notifications published on <b>notice::products::pants</b>, but you will also receive notifications published on <b>notice::products::pants::cotton_pants</b> and <b>notice::products::pants::nylon_pants</b> . And by subscribing to say <b>notice</b>, you will receive all published notifications.
+By subscribing to <b>notice::products::pants</b> you will receive notifications published on <b>notice::products::pants</b>, but you will also receive notifications published on <b>notice::products::pants::cotton_pants</b> and <b>notice::products::pants::nylon_pants</b> . And by subscribing to say <b>notice</b>, you will receive all published notifications with a <b>notice</b> root.
 
 You are free to construct your own channel nomenclature.
 <br><br><br>
