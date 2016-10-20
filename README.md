@@ -43,7 +43,7 @@ or use nvm
   <pre>npm install</pre>
   <pre>gulp</pre>
 <br><br><br>
-## Usage
+## Setup
 #### Import and instantiate
 <pre>import Polynotice from './polynotice/Polynotice.js';
 import polynotice_dropdown from './polynotice/components/dropdown.vue';
@@ -66,6 +66,18 @@ let polynotice = new Polynotice();</pre>
     <polynotice_dropdown></polynotice_dropdown>
 </ul>
 ```
+
+<br><br><br>
+##Usage
+####Subscribe to a notification channel:
+<pre>Polynotice::subscribeTo("notice::products::pants");</pre>
+####Publish on a notification channel:
+<pre>Polynotice::publish("notice::products::pants",$defaultNotice);</pre>
+
+Notice the "::" marking in the channel name. It enables you to subscribe not only to a specific channel, but to multiple subchannels.
+Example:
+By subscribing to <b>notice::products::pants</b> you will receive notifications published on <b>notice::products::pants</b>, but you will also receive notifications published on <b>notice::products::pants::cotton_pants</b>.
+
 <br><br><br>
 ## Customization
 Edit Vue components in <b>assets/js/polynotice/components</b> for a custom look and feel. 
